@@ -1,0 +1,27 @@
+From 83b8c426caaaacc6977b5c2ff58944424510a3a4 Mon Sep 17 00:00:00 2001
+From: Ilya Konstantinov <ilya.konstantinov@gmail.com>
+Date: Thu, 7 May 2015 01:14:15 +0200
+Subject: [PATCH 4/5] agent: hide noisy debug print
+
+---
+ agent/agent.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/agent/agent.c b/agent/agent.c
+index 84d4093..3b7f184 100644
+--- a/agent/agent.c
++++ b/agent/agent.c
+@@ -4484,8 +4484,10 @@ nice_agent_send_messages_nonblocking_internal (
+     n_sent = -1;
+   }
+ 
++#if 0
+   nice_debug ("%s: n_sent: %d, n_messages: %u", G_STRFUNC,
+       n_sent, n_messages);
++#endif
+ 
+ done:
+   g_assert ((child_error != NULL) == (n_sent == -1));
+-- 
+2.2.1
+

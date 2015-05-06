@@ -18,7 +18,10 @@ class Recipe(custom.GStreamerStatic):
         "libnice/0003-Do-not-compare-scope-for-IPv6-address-when-scope-is-.patch",
         "libnice/0004-Removing-no-op-assignment.patch"
     ]
-
+    patches += [
+        'libnice/ikonst/0001-agent-hide-noisy-debug-print.patch',
+        'libnice/ikonst/0002-interfaces-inhibit-IPv6-unless-LIBNICE_GATHER_IPV6_C.patch',
+    ]
 
     files_plugins_net_devel = ['libgstnice']
     # FIXME - if_arp.h? (iOS)
